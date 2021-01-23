@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated class="bg-green">
-      <q-toolbar>
+      <q-toolbar class="text-center">
         <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
         <q-toolbar-title>{{ title }}</q-toolbar-title>
       </q-toolbar>
@@ -70,20 +70,17 @@ export default {
   data: () => ({
     drawer: false,
     menuList,
-    title: ''
+    defaultName: 'desafio vue'
   }),
-  created() {
-    this.getTitle()
-  },
-  methods: {
-    getTitle() {
-      if (this.$route.path) {
-        console.log(this.$route)
-        this.title = this.$route.name
-      } else {
-        this.title = 'Desafio Vue'
+
+  computed: {
+    title() {
+      if (this.$route.name) {
+        return this.$route.name.toLocaleUpperCase()
       }
+      return this.defaultName.toLocaleUpperCase()
     }
-  }
+  },
+  methods: {}
 }
 </script>
