@@ -1,7 +1,11 @@
 export default function() {
   return {
     currentUser: {
-      name: ''
+      id: null,
+      name: '',
+      username: '',
+      type: '',
+      password: ''
     }
   }
 }

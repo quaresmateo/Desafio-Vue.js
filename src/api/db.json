@@ -1,5 +1,95 @@
 {
-  "posts": [{ "id": 1, "title": "json-server", "author": "typicode" }],
-  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
-  "profile": { "name": "typicode" }
+  "products": [
+    {
+      "id": "1",
+      "name": "aciclovir",
+      "value": "25",
+      "created_at": "2021-01-23 9:00:00",
+      "updated_at": "2021-01-23 9:00:00",
+      "amount": "156"
+    },
+    {
+      "id": "2",
+      "name": "dipirona",
+      "value": "5",
+      "created_at": "2021-01-23 9:00:00",
+      "updated_at": "2021-01-23 9:00:00",
+      "amount": "50"
+    }
+  ],
+  "product_sales": [
+    {
+      "id": "1",
+      "seller_id": "1",
+      "products_id": [
+        {
+          "id": "1",
+          "name": "aciclovir",
+          "value": "25",
+          "created_at": "2021-01-23 9:00:00",
+          "updated_at": "2021-01-23 9:00:00",
+          "amount": "157"
+        },
+        {
+          "id": "2",
+          "name": "dipirona",
+          "value": "5",
+          "created_at": "2021-01-23 9:00:00",
+          "updated_at": "2021-01-23 9:00:00",
+          "amount": "50"
+        },
+        {
+          "id": "2",
+          "name": "dipirona",
+          "value": "5",
+          "created_at": "2021-01-23 9:00:00",
+          "updated_at": "2021-01-23 9:00:00",
+          "amount": "50"
+        },
+        {
+          "id": "2",
+          "name": "dipirona",
+          "value": "5",
+          "created_at": "2021-01-23 9:00:00",
+          "updated_at": "2021-01-23 9:00:00",
+          "amount": "50"
+        }
+      ],
+      "value": "25",
+      "amount": "4",
+      "created_at": "2021-01-23 9:00:00"
+    }
+  ],
+  "sellers": [
+    {
+      "id": "1",
+      "name": "Paulo Ricardo",
+      "type": "seller",
+      "username": "paulo_r",
+      "password": "123456"
+    },
+    {
+      "id": "2",
+      "name": "Verônica Assunção",
+      "type": "seller",
+      "username": "averonica",
+      "password": "123456"
+    },
+    {
+      "id": "3",
+      "name": "Carlos Henrique Cardoso",
+      "type": "seller",
+      "username": "kaka",
+      "password": "123456"
+    }
+  ],
+  "adms": [
+    {
+      "id": "1",
+      "name": "Berenice Richester",
+      "type": "adm",
+      "username": "br_1986",
+      "password": "123456"
+    }
+  ]
 }
