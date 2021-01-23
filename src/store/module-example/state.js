@@ -6,6 +6,8 @@ export default function() {
       username: '',
       type: '',
       password: ''
-    }
+    },
+    products: [],
+    products_selles: []
   }
 }
