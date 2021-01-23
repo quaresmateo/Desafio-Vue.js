@@ -6,6 +6,11 @@
 
 <script>
 export default {
+  preFetch({ store, redirect }) {
+    if (!store.state.state.logged) {
+      redirect({ path: '/entrar' })
+    }
+  },
   name: 'Dashboard'
 }
 </script>

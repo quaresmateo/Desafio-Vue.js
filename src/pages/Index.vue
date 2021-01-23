@@ -15,7 +15,7 @@ export default {
         this.response = response.data
       })
       .catch(error => {
-        console.log(error)
+        console.log('Ops! Ocorreu um erro :(')
       })
   }
 }

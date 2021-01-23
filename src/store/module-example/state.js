@@ -1,5 +1,6 @@
 export default function() {
   return {
+    logged: false,
     currentUser: {
       id: '',
       name: '',
