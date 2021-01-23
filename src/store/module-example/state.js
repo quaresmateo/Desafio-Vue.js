@@ -1,7 +1,7 @@
 export default function() {
   return {
     currentUser: {
-      id: null,
+      id: '',
       name: '',
       username: '',
       type: '',
