@@ -21,8 +21,9 @@
             <q-item
               :key="index"
               clickable
-              :active="menuItem.label === 'Outbox'"
+              :active="$route.path === menuItem.label"
               v-ripple
+              :to="`/${menuItem.label}`"
             >
               <q-item-section avatar>
                 <q-icon :name="menuItem.icon" />
@@ -39,10 +40,7 @@
 
     <q-page-container>
       <q-page padding>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nihil
-        praesentium molestias a adipisci, dolore vitae odit, quidem consequatur
-        optio voluptates asperiores pariatur eos numquam rerum delectus commodi
-        perferendis voluptate?
+        <router-view />
       </q-page>
     </q-page-container>
   </q-layout>
@@ -79,7 +77,8 @@ export default {
   },
   methods: {
     getTitle() {
-      if (this.$route.name) {
+      if (this.$route.path) {
+        console.log(this.$route)
         this.title = this.$route.name
       } else {
         this.title = 'Desafio Vue'
