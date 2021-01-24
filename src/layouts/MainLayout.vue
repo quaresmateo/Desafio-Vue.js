@@ -48,7 +48,7 @@
     </q-drawer>
 
     <q-page-container>
-      <q-page padding class="flex justify-center text-center">
+      <q-page padding class="flex justify-center">
         <router-view />
       </q-page>
     </q-page-container>

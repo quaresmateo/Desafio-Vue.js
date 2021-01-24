@@ -1,6 +1,6 @@
 import api from '../../services/api'
 
-export async function loginUser(context, payload) {
+export function loginUser(context, payload) {
   return api
     .get(`/users?username=${payload.username}`)
     .then(res => {
@@ -11,6 +11,21 @@ export async function loginUser(context, payload) {
       }
     })
     .catch(err => {
-      console.log(err)
+      return err
+    })
+}
+
+export function createUser(context, payload) {
+  return api
+    .post('/users', payload)
+    .then(res => {
+      if (res.data) {
+        const user = res.data
+        context.commit('SET_USER', user)
+        context.commit('LOGIN', true)
+      }
+    })
+    .catch(err => {
+      return err
     })
 }

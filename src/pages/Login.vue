@@ -1,5 +1,5 @@
 <template>
-  <q-page-container>
+  <q-page>
     <h2>Entrar no sistema</h2>
     <q-card
       bordered
@@ -32,7 +32,7 @@
         />
       </q-card-actions>
     </q-card>
-  </q-page-container>
+  </q-page>
 </template>
 
 <script>
