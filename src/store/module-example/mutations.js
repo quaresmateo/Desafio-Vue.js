@@ -3,5 +3,5 @@ export function LOGIN(state, payload) {
 }
 
 export function SET_USER(state, payload) {
-  state.user = Object.assign({}, state.user, payload)
+  state.currentUser = Object.assign({}, state.user, payload)
 }
