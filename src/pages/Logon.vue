@@ -1,8 +1,5 @@
 <template>
   <q-page>
-    <Alert :active="alert">
-      {{ message }}
-    </Alert>
     <h2>Criar uma conta</h2>
     <q-card
       bordered
@@ -52,10 +49,8 @@
 </template>
 
 <script>
-import Alert from 'components/Alert.vue'
 export default {
   name: 'Logon',
-  components: { Alert },
   data: () => ({
     data: {
       username: '',

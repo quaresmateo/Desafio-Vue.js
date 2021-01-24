@@ -1,5 +1,26 @@
 <template>
   <q-page>
+    <q-dialog v-model="alert">
+      <q-card>
+        <q-card-section>
+          <div class="text-h6">Aviso</div>
+        </q-card-section>
+
+        <q-card-section class="q-pt-none">
+          {{ message }}
+        </q-card-section>
+
+        <q-card-actions align="right">
+          <q-btn
+            @click="!alert"
+            flat
+            label="OK"
+            color="primary"
+            v-close-popup
+          />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
     <h2>Entrar no sistema</h2>
     <q-card
       bordered
@@ -52,7 +73,9 @@ export default {
     data: {
       username: '',
       password: ''
-    }
+    },
+    message: '',
+    alert: false
   }),
   computed: {
     logged() {
@@ -61,9 +84,16 @@ export default {
   },
   methods: {
     login() {
-      this.$store.dispatch('example/loginUser', this.data).then(() => {
-        this.$router.push('/')
-      })
+      this.$store
+        .dispatch('example/loginUser', this.data)
+        .then(() => {
+          this.$router.push('/')
+          this.alert = !this.alert
+        })
+        .catch(() => {
+          this.message = 'Email ou usuário incorreto'
+          this.alert = !this.alert
+        })
     }
   }
 }
