@@ -3,7 +3,7 @@
     <Alert :active="alert">
       {{ message }}
     </Alert>
-    <h2>Criar conta</h2>
+    <h2>Criar uma conta</h2>
     <q-card
       bordered
       flat

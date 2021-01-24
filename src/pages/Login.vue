@@ -31,6 +31,16 @@
           color="primary"
         />
       </q-card-actions>
+      <q-card-actions align="center">
+        <q-btn
+          to="/criar-conta"
+          class="q-px-md"
+          size="sm"
+          flat
+          label="Não tem conta? Crie uma agora"
+          color="primary"
+        />
+      </q-card-actions>
     </q-card>
   </q-page>
 </template>
