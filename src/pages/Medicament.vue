@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <h2>Medicamentos</h2>
+    <h3>Medicamentos</h3>
   </q-page>
 </template>
 

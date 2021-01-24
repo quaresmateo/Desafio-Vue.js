@@ -21,7 +21,7 @@
         </q-card-actions>
       </q-card>
     </q-dialog>
-    <h2>Entrar no sistema</h2>
+    <h3>Entrar no sistema</h3>
     <q-card
       bordered
       flat

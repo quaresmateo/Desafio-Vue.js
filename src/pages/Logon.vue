@@ -1,6 +1,27 @@
 <template>
   <q-page>
-    <h2>Criar uma conta</h2>
+    <q-dialog v-model="alert">
+      <q-card>
+        <q-card-section>
+          <div class="text-h6">Aviso</div>
+        </q-card-section>
+
+        <q-card-section class="q-pt-none">
+          {{ message }}
+        </q-card-section>
+
+        <q-card-actions align="right">
+          <q-btn
+            @click="!alert"
+            flat
+            label="OK"
+            color="primary"
+            v-close-popup
+          />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
+    <h3>Criar uma conta</h3>
     <q-card
       bordered
       flat
@@ -44,6 +65,16 @@
           color="primary"
         />
       </q-card-actions>
+      <q-card-actions align="center">
+        <q-btn
+          to="/entrar"
+          class="q-px-md"
+          size="sm"
+          flat
+          label="Ou, entrar no sistema"
+          color="primary"
+        />
+      </q-card-actions>
     </q-card>
   </q-page>
 </template>
@@ -78,10 +109,11 @@ export default {
         .dispatch('example/createUser', this.data)
         .then(() => {
           this.$router.push('/')
+          this.alert = !this.alert
         })
         .catch(() => {
           this.message = 'Ops, não foi possível realizar a operação'
-          this.alert = true
+          this.alert = !this.alert
         })
     }
   }
