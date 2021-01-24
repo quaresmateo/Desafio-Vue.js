@@ -5,7 +5,7 @@
       bordered
       flat
       class="my-card q-px-lg q-py-lg"
-      style="max-width: 800px"
+      style="max-width: 500px"
     >
       <q-card-section>
         <q-input
@@ -23,7 +23,13 @@
         />
       </q-card-section>
       <q-card-actions align="center">
-        <q-btn @click="login()" label="Entrar" color="primary" />
+        <q-btn
+          class="q-px-md"
+          size="md"
+          @click="login()"
+          label="Entrar"
+          color="primary"
+        />
       </q-card-actions>
     </q-card>
   </q-page-container>
