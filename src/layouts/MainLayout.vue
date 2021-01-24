@@ -60,6 +60,11 @@ import { mapGetters } from 'vuex'
 
 const menuList = [
   {
+    icon: 'sell',
+    label: 'Vendas',
+    separator: false
+  },
+  {
     icon: 'dashboard',
     label: 'Dashboard',
     separator: false

@@ -53,6 +53,18 @@ const routes = [
     ]
   },
 
+  {
+    path: '/vendas',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      {
+        path: '',
+        name: 'sells',
+        component: () => import('pages/Sells.vue')
+      }
+    ]
+  },
+
   // Always leave this as last one,
   // but you can also remove it
   {
