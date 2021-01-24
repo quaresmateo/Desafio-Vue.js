@@ -5,3 +5,7 @@ export function LOGIN(state, payload) {
 export function SET_USER(state, payload) {
   state.currentUser = Object.assign({}, state.user, payload)
 }
+
+export function LOGOUT(state) {
+  state.logged = false
+}

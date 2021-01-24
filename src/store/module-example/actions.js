@@ -23,16 +23,28 @@ export function loginUser(context, payload) {
 }
 
 export function createUser(context, payload) {
-  return api
-    .post('/users', payload)
-    .then(res => {
-      if (res.data) {
-        const user = res.data
-        context.commit('SET_USER', user)
-        context.commit('LOGIN', true)
-      }
-    })
-    .catch(err => {
-      return err
-    })
+  return new Promise((resolve, reject) => {
+    api
+      .post('/users', payload)
+      .then(res => {
+        if (res.data) {
+          const user = res.data
+          context.commit('SET_USER', user)
+          context.commit('LOGIN', true)
+          resolve()
+        } else {
+          reject()
+        }
+      })
+      .catch(err => {
+        reject(err)
+      })
+  })
+}
+
+export function logout(context) {
+  return new Promise((resolve, reject) => {
+    context.LOGOUT
+    resolve()
+  })
 }

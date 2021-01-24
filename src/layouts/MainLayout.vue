@@ -25,6 +25,15 @@
     >
       <q-scroll-area class="fit">
         <q-list>
+          <q-item v-if="logged">
+            <q-item-section avatar>
+              <q-icon name="person" />
+            </q-item-section>
+            <q-item-section>
+              {{ me.name }}
+            </q-item-section>
+          </q-item>
+          <q-separator />
           <template v-for="(menuItem, index) in menuList">
             <q-item
               :key="menuItem.label + index"
@@ -43,6 +52,14 @@
             </q-item>
             <q-separator :key="'sep' + index" v-if="menuItem.separator" />
           </template>
+          <q-item clickable v-if="logged" v-ripple @click="logout()">
+            <q-item-section avatar>
+              <q-icon name="logout" />
+            </q-item-section>
+            <q-item-section>
+              Sair
+            </q-item-section>
+          </q-item>
         </q-list>
       </q-scroll-area>
     </q-drawer>
@@ -72,7 +89,7 @@ const menuList = [
   {
     icon: 'healing',
     label: 'Medicamentos',
-    separator: false
+    separator: true
   }
 ]
 
@@ -92,6 +109,11 @@ export default {
       return this.defaultName.toLocaleUpperCase()
     }
   },
-  methods: {}
+  methods: {
+    logout() {
+      this.$store.dispatch('example/logout')
+      this.$router.go(0)
+    }
+  }
 }
 </script>
