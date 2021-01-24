@@ -19,9 +19,10 @@
         <q-list>
           <template v-for="(menuItem, index) in menuList">
             <q-item
-              :key="index"
+              :key="menuItem.label + index"
               clickable
               :active="$route.path === menuItem.label"
+              v-if="logged"
               v-ripple
               :to="`/${menuItem.label}`"
             >
@@ -51,11 +52,6 @@ import { mapGetters } from 'vuex'
 
 const menuList = [
   {
-    icon: 'person',
-    label: 'Entrar',
-    separator: true
-  },
-  {
     icon: 'dashboard',
     label: 'Dashboard',
     separator: false
@@ -74,9 +70,8 @@ export default {
     menuList,
     defaultName: 'desafio vue'
   }),
-
   computed: {
-    ...mapGetters('example', ['logged']),
+    ...mapGetters('example', ['logged', 'me']),
     title() {
       if (this.$route.name) {
         return this.$route.name.toLocaleUpperCase()
