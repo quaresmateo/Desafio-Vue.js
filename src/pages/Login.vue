@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     login() {
-      this.$store.dispatch('actions/loginUser', this.data)
+      this.$store.dispatch('example/loginUser', this.data)
     }
   }
 }

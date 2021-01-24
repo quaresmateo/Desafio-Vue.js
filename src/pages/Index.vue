@@ -4,6 +4,7 @@
 
 <script>
 import api from '../services/api'
+import { mapGetters } from 'vuex'
 
 export default {
   preFetch({ store, redirect }) {
@@ -22,6 +23,9 @@ export default {
       .catch(error => {
         console.log('Ops! Ocorreu um erro :(')
       })
+  },
+  computed: {
+    ...mapGetters('example', ['logged'])
   }
 }
 </script>

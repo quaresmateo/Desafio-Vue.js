@@ -47,6 +47,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 const menuList = [
   {
     icon: 'person',
@@ -74,14 +76,12 @@ export default {
   }),
 
   computed: {
+    ...mapGetters('example', ['logged']),
     title() {
       if (this.$route.name) {
         return this.$route.name.toLocaleUpperCase()
       }
       return this.defaultName.toLocaleUpperCase()
-    },
-    logged() {
-      return this.$store.state.example.logged
     }
   },
   methods: {}

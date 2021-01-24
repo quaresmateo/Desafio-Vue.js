@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   preFetch({ store, redirect }) {
     if (!store.state.example.logged) {
@@ -13,9 +15,7 @@ export default {
   },
   name: 'Dashboard',
   computed: {
-    logged() {
-      return this.$store.state.example.logged
-    }
+    ...mapGetters('example', ['logged'])
   }
 }
 </script>
