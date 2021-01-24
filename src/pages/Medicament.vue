@@ -11,6 +11,12 @@ export default {
       redirect({ path: '/entrar' })
     }
   },
-  name: 'Medicaments'
+  name: 'Medicaments',
+  data: () => ({}),
+  computed: {
+    logged() {
+      return this.$store.state.state.logged
+    }
+  }
 }
 </script>

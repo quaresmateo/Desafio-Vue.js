@@ -79,6 +79,9 @@ export default {
         return this.$route.name.toLocaleUpperCase()
       }
       return this.defaultName.toLocaleUpperCase()
+    },
+    logged() {
+      return this.$store.state.state.logged
     }
   },
   methods: {}

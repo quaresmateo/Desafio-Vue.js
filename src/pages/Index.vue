@@ -6,6 +6,11 @@
 import api from '../services/api'
 
 export default {
+  preFetch({ store, redirect }) {
+    if (!store.state.state.logged) {
+      redirect({ path: '/entrar' })
+    }
+  },
   name: 'PageIndex',
   data: () => ({ response: null }),
   beforeMount() {

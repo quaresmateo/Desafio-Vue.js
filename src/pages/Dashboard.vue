@@ -11,6 +11,11 @@ export default {
       redirect({ path: '/entrar' })
     }
   },
-  name: 'Dashboard'
+  name: 'Dashboard',
+  computed: {
+    logged() {
+      return this.$store.state.state.logged
+    }
+  }
 }
 </script>

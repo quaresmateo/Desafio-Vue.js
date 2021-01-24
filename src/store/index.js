@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import state from './module-example'
+import actions from './module-example'
 
 Vue.use(Vuex)
 
@@ -17,7 +18,8 @@ Vue.use(Vuex)
 export default function(/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
-      state
+      state,
+      actions
     },
 
     // enable strict mode (adds overhead!)
