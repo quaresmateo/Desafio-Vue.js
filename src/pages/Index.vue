@@ -7,7 +7,7 @@ import api from '../services/api'
 
 export default {
   preFetch({ store, redirect }) {
-    if (!store.state.state.logged) {
+    if (!store.state.example.logged) {
       redirect({ path: '/entrar' })
     }
   },

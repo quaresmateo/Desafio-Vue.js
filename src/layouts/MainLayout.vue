@@ -81,7 +81,7 @@ export default {
       return this.defaultName.toLocaleUpperCase()
     },
     logged() {
-      return this.$store.state.state.logged
+      return this.$store.state.example.logged
     }
   },
   methods: {}

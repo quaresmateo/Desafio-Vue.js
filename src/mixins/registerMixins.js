@@ -14,7 +14,7 @@ export const RegisterMixin = {
   methods: {
     register() {
       new Registration().register().then(response => {
-        this.logged = state.state.logged
+        this.logged = state.example.logged
       })
     }
   }

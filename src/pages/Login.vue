@@ -33,7 +33,7 @@ export default {
   }),
   computed: {
     logged() {
-      return this.$store.state.state.logged
+      return this.$store.state.example.logged
     }
   },
   methods: {
