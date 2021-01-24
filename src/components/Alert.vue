@@ -1,5 +1,5 @@
 <template>
-  <q-dialog v-model="alert">
+  <q-dialog v-model="active">
     <q-card>
       <q-card-section>
         <div class="text-h6">Alert</div>
@@ -19,13 +19,11 @@
 <script>
 export default {
   name: 'Alert',
-  props: [
-    {
-      active: {
-        type: Boolean,
-        default: false
-      }
+  props: {
+    active: {
+      type: Boolean,
+      default: false
     }
-  ]
+  }
 }
 </script>
