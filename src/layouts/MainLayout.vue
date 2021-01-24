@@ -1,13 +1,21 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated class="bg-green">
+  <q-layout view="lHh lpR lFf">
+    <q-header bordered class="bg-green">
       <q-toolbar class="text-center">
-        <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
+        <q-btn
+          v-if="logged"
+          flat
+          @click="drawer = !drawer"
+          round
+          dense
+          icon="menu"
+        />
         <q-toolbar-title>{{ title }}</q-toolbar-title>
       </q-toolbar>
     </q-header>
 
     <q-drawer
+      v-if="logged"
       v-model="drawer"
       show-if-above
       :width="200"
@@ -40,7 +48,7 @@
     </q-drawer>
 
     <q-page-container>
-      <q-page padding>
+      <q-page padding class="flex justify-center text-center">
         <router-view />
       </q-page>
     </q-page-container>

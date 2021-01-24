@@ -1,7 +1,12 @@
 <template>
-  <q-page padding>
-    <h2>Login</h2>
-    <q-card class="my-card" style="max-width: 500px">
+  <q-page-container>
+    <h2>Entrar no sistema</h2>
+    <q-card
+      bordered
+      flat
+      class="my-card q-px-lg q-py-lg"
+      style="max-width: 800px"
+    >
       <q-card-section>
         <q-input
           class="q-mb-md"
@@ -17,9 +22,11 @@
           label="Senha"
         />
       </q-card-section>
-      <q-btn @click="login()" label="Entrar" color="primary" />
+      <q-card-actions align="center">
+        <q-btn @click="login()" label="Entrar" color="primary" />
+      </q-card-actions>
     </q-card>
-  </q-page>
+  </q-page-container>
 </template>
 
 <script>
