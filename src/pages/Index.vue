@@ -9,8 +9,9 @@ import { mapGetters } from 'vuex'
 export default {
   preFetch({ store, redirect }) {
     if (!store.state.example.logged) {
-      redirect({ path: '/entrar' })
+      redirect({ path: '/Entrar' })
     }
+    redirect({ path: '/Vendas' })
   },
   name: 'PageIndex',
   data: () => ({ response: null }),
